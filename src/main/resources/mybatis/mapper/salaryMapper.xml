@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.nrcynet.dao.mapper.SalaryMapper">
+	
+	<select id="selectSalaryById" resultType="top.nrcynet.dao.bean.Salary">
+		select * from 
+			test.salary 
+		where 
+			id=#{id}
+	</select>
+	<select id="selectSalaryAll" resultType="top.nrcynet.dao.bean.Salary">
+		select * from test.salary
+	</select>
+	
+	<delete id="deleteSalaryById">
+		delete table 
+			test.salary 
+		where 
+			id=#{id}
+	</delete>
+	
+	<insert id="insertSalaryByData">
+		insert into 
+			test.salary (name,salary) 
+		values(#{name},#{salary})	
+	</insert>
+	
+	<update id="updateSalaryByData">
+		update 
+			test.salary 
+		set 
+			name=#{name},
+			salary=#{salary}
+		where 
+			id=#{id}
+	</update>
+</mapper>

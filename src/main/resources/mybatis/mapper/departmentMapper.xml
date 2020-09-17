@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.nrcynet.dao.mapper.DepartmentMapper">
+	
+	<select id="selectDepartmentById" resultType="top.nrcynet.dao.bean.Department">
+		select * from 
+			test.department 
+		where 
+			id=#{id}
+	</select>
+	<select id="selectDepartmentAll" resultType="top.nrcynet.dao.bean.Department">
+		select * from test.department
+	</select>
+	
+	<delete id="deleteDepartmentById">
+		delete table 
+			test.department 
+		where 
+			id=#{id}
+	</delete>
+	
+	<insert id="insertDepartmentByData">
+		insert into 
+			test.department (department_id,leader,department_name) 
+		values(#{departmentId},#{leader},#{departmentName})	
+	</insert>
+	
+	<update id="updateDepartmentByData">
+		update 
+		test.department 
+		set 
+			department_id=#{departmentId},
+			leader=#{leader},
+			department_name=#{departmentName}
+		where 
+			id=#{id}
+	</update>
+</mapper>

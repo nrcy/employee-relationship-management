@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.nrcynet.dao.mapper.EmployeeMapper">
+	
+	<select id="selectEmployeeById" resultType="top.nrcynet.dao.bean.Employee">
+		select * from 
+			test.employee 
+		where 
+			id=#{id}
+	</select>
+	<select id="selectEmployeeAll" resultType="top.nrcynet.dao.bean.Employee">
+		select * from test.employee
+	</select>
+	
+	<delete id="deleteEmployeeById">
+		delete table 
+			test.employee 
+		where 
+			id=#{id}
+	</delete>
+	
+	<insert id="insertEmployeeByData">
+		insert into 
+			test.employee (name,address,department_id,employee_id) 
+		values(#{name},#{address},#{departmentId},#{employeeId})	
+	</insert>
+	
+	<update id="updateEmployeeByData">
+		update 
+			test.employee 
+		set 
+			name=#{name},
+			address=#{address},
+			department_id=#{departmentId},
+			employee_id=#{employeeId}
+		where 
+			id=#{id}
+	</update>
+</mapper>

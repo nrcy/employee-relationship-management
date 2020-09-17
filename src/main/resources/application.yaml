@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    password: 123456
+    username: nrcy
+    url: 
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:  config-location: classpath:mybatis/mybatis-global.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
